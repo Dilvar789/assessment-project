@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="numverify">
+  <head>
+    <meta charset="utf-8">
+    <title>document</title>
+    <style>
+    #button{
+                width: 9em;
+                border: 5px solid brown ;
+                background: khaki  ;
+                border-radius: 1px;
+                height: 2em;
+            }
+            a{
+                display: block;
+                width: 100%;
+                line-height: 2em;
+                text-align: center;
+                border-radius: 1px;
+            }
+            a:hover{
+                color: red;
+                background: #eff;
+            }
+            p{color:#666;font-size:16px;font-weight:300;line-height:26px}p.subtitle{font-size:18px}p.subtitle-muted{color:rgba(255,255,255,.62)!important}h1,h2{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}h1{font-size:46px;letter-spacing:-.54px}h2{font-size:31px}@media (max-width:992px){h1{font-size:42px}h2{font-size:28px}h2.title{font-size:30px}}@media (max-width:768px){h1{font-size:34px}h2{font-size:24px}h2.title{font-size:26px}}@media (max-width:360px){h1{font-size:26px}h2{font-size:21px}h2.title{font-size:21px}}ul{font-size:14px}li{line-height:normal;margin-bottom:13px}.btn-lg{font-size:16px;height:48px;padding-left:25px;padding-right:25px;border-radius:4px}.btn.btn-flat{background-image:none!important;border:0!important}.btn.btn-raised{box-shadow:0 1px 2px hsla(0,0%,0%,.15),inset 0 -1px 0 hsla(0,0%,0%,.2);border:0!important}.btn.btn-warning{background-image:linear-gradient(180deg,hsl(30,100%,64%) 0,hsl(30,98%,50%) 100%)}.btn.btn-warning.btn-flat{background-color:hsl(33,100%,50%)}.btn-padding-1{padding-left:20px;padding-right:20px}
+            .abc{
+              align-content: center;
+              float: center;
+              width: 100%;
+              height: 100%;
+              background-color: bisque;
+              font-size-adjust:inherit;
+            }
+            .abc-content {
+  background-color: blueviolet;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+            .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow:visible; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  scroll-margin-right: 20%;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: lightgoldenrodyellow;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+  </head> 
+  <body>
+    <div id='header' style="background-image: url(5.jpg); height: 620px; width: e50px; background-size: cover;"> 
+      <div class="navbar" >
+        <table style="height: 60px;width: 100%;" >
+            <tr>&nbsp;
+              <th><img src="pic1.png" height="50px" width="50px"></th>
+              <th> <h1 style="color: black; margin-left: -85px; height: 40px;">NumVerify</h1></th>
+                <th><div id="button" style="float: right; margin-right: 90px; size: 80%;" ><a href="documentation.html">Documentation</a></div>
+                &nbsp;<div id="button" style="float: right; margin-right: 50px;"><a href="contact.html">Contact US</a></div> </th>
+            </tr>
+        </table> 
+    </div>
+    <div> 
+      <button id="myBtn" style="margin-left: 150px;margin-top: 230px; height: 60px; border-width:5px; border-color: green; background-color: lightskyblue;"><b> First Check Supported Countries</b></button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+      
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <ul id='aa'>
+            
+          </ul>
+        </div>
+      
+      </div>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+    </div>
+    <div  style="margin-top: -270px;">
+     <p style="color: brown; float: center; align-content: center; font-size: 40px; font-weight: bolder; text-shadow: 4px 4px 8px gold">&nbsp;&nbsp;&nbsp;<u>Global Phone Number Validation</u></p>
+     <p style="color: black; font-size: 30px; font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Here you get the all the information records <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of any mobile number.</p>
+    </div>
+    <div >
+    <div style="margin-left: 60px ; margin-top: 160px;"><h2 style="color: maroon; font-size: 250%;"> Enter the number to verify</h2></div>
+    <input type="text" id='a' placeholder="+91" value="+91" style="height: 35px; width: 50px; margin-top: -30px; margin-left: 60px; background-color: lightgray; border-radius: 5px; border-style: solid;" />
+    <input  type="text" id='b' placeholder="9464964465" style="height: 35px; width: 250px; margin-top: -30px; margin-left: 0px; background-color: lightgray; border-style: solid; border-radius: 5px;" />
+     <button id="button" onclick="func()" style="margin-left: 10px;margin-top: -40px; height: 45px; border-width:5px; border-color: green; background-color: lightskyblue; "><b>Validate</b></button>
+     </div>
+   
+  </div>
+
+  <div id="div1" class="abc">
+       
+    </div>
+    <div id="div2">
+
+    </div>
+    <div class="questions-answers" style="background-image: url(1.jpg); background-size: cover;">
+      <h2 class="title" style="float: center; color:whitesmoke; text-align: center; font-size: 40px;"><u>How to Use the Phone Number Validation Tool</u></h2>
+      <p>
+      With our phone verification tool, you can validate phone numbers as they are collected from different channels<br>. In addition to validating phone numbers, you can also identify whether the number is a <br>landline or mobile, to assist ensuring compliance with regulators. Here’s how you can use our phone validator tool:
+      </p>
+      <ul style="color: gold;">
+      <li><strong>Step #1:</strong> Enter the number you wish to validate and select the country of provenance.<br> Click on the “Validate Number” button to instantly validate the phone number.</li>
+      <li>
+      <strong>Step #2:</strong> The ‘Main Info’ section displays information about the number’s country, type and the <br>carrier. From the ‘Format’ section, you can view E164, RFC3966, International and National details.
+      </li>
+      <li><strong>Step #3:</strong> If you want to validate another phone number, simply click the “Reset” button<br> or refresh the page. If the phone number is valid, you will have the option to send a text message to it. In order to do that though, you need a TextMagic account.</li>
+      </ul>
+      <h4 class="title" style="color:wheat;"">Why you should use the phone validator</h4>
+      <p>
+      How valuable are accurate phone numbers for your business? If your organization is looking to broaden its telecommunication strategy, or you require phone numbers to interact with customers, then the phone verification tool will ensure that the numbers you collect are accurate before you pick up the phone or send a text message.
+      </p>
+      <h4 class="title" style="color:wheat;">Why we built this tool</h4>
+      <p>
+      The explosion in mobile usage has fundamentally changed the way people interact with brands. We understand how important it is to reach out to clients in a timely manner. For this purpose, we created an easy-to-use phone verification tool that will ultimately lead to increased customer satisfaction, better retention, improved productivity and life-time value.
+      </p>
+      <h4 class="title" style="color:wheat;">Benefits of using the phone validator</h4>
+      <p>
+      Our phone number verification tool extracts data from over 200 cable and telecommunications providers. Here are the main benefits of phone number verification:
+      </p>
+      <ul style="color: gold;">
+      <li>Maximize revenue opportunities.</li>
+      <li>Improve customer experience.</li>
+      <li>Increase business performance.</li>
+      <li>Discover important information about the owner.</li>
+      <li>Identify the number type before sending a text message.</li>
+      <li>Cleanse phone numbers before they enter your database.</li>
+      </ul>
+      <h4 class="title" style="color:wheat;">Why is phone number validation important? </h4>
+      <p>
+      Did you know that 91% of organizations suffer from data errors and 77% believe that their bottom line is affected by invalid contact information?
+      </p>
+      <p>
+      Phone number verification can help you avoid unnecessary costs and wasted effort. It saves time by early on checking for invalid phone numbers. This is the best time to discover invalid phone numbers in your database, rather than during the course of sales efforts, customer service or branding or marketing activities. Invalid phone numbers should be removed from your database as they are collected and identified.
+      </p>
+      <h4 class="title" style="color:wheat;">What is the difference between phone look-up and phone validation?</h4>
+      <p>
+      Phone number look-up refers to the process of extracting personal information, such as the name of a person. On the other hand, phone validation will tell you if the phone number attached to that record exists or is fake. Phone number validation will also give you details about the type of number (landline or mobile), the carrier and GEO location.
+      </p>
+      <h4 class="title" style="color:wheat;">Does phone validation work for personal and business numbers?</h4>
+      <p>
+      Yes, the phone verification tool checks both personal and business numbers.
+      </p>
+      <h4 class="title" style="color:wheat;">How does phone number validation work?</h4>
+      <p>
+      The phone validator doesn’t only check the format of the number, it performs a live ‘ping’ to that number to see if it is actually live and to check whether it can receive texts or calls. Importantly, you also don’t have to worry about the owner of the mobile device receiving any SMS or notification – they will not be aware of your phone verification attempts.
+      </p>
+      </div>
+      <div id="footer" style="background-color: skyblue; background-size: cover;  ">
+        <div>
+         <button style="height: 90px; width: 90px; float: center;" ><a href="https://dilvar789.github.io/resume/">Click here to see Resume </a></button>
+        </div>
+      </div>
+  <script>
+      var url='http://apilayer.net/api/validate?access_key=1c2cd058a189cd60dee54b0dd67384db&number=9464964465&country_code=IN&format=1'
+      var xhr=new XMLHttpRequest();
+       xhr.open('GET',url)
+       xhr.onreadystatechange=text
+       function text() {
+         if(this.status==200 && this.readyState==4)
+         {
+           var res=JSON.parse(this.responseText)
+           console.log(typeof res)
+          console.log(res);
+         }
+       }
+       xhr.send()
+      </script>
+  <script>
+    function func()
+    {
+    var result=document.getElementById('b').value
+    console.log(result)
+    var url='http://apilayer.net/api/validate?access_key=1c2cd058a189cd60dee54b0dd67384db&number='+result+'&country_code=IN&format=1'
+      var xhr=new XMLHttpRequest();
+       xhr.open('GET',url)
+       xhr.onreadystatechange=text
+       function text() {
+         if(this.status==200 && this.readyState==4)
+         {
+           var res=JSON.parse(this.responseText)
+           console.log(typeof res)
+          console.log(res);
+          var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Valid := "+res.valid
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Location := "+res.location
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Line Type := "+res.line_type
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Company := "+res.carrier
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Country Code := "+res.country_code
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Country Name := "+res.country_name
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Mobile_Number := "+res.number
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Country Prefix := "+res.country_prefix
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "Country Local_format := "+res.local_format
+           div4.appendChild(li)
+           var div4=document.getElementById('div1')
+            var li = document.createElement('p')
+            li.textContent = "International format  := "+res.international_format
+           div4.appendChild(li)
+         }
+       }
+       xhr.send()
+    }
+  </script>
+    <script>
+      var url='http://apilayer.net/api/countries?access_key=1c2cd058a189cd60dee54b0dd67384db'
+      var xhr=new XMLHttpRequest();
+       xhr.open('GET',url)
+       xhr.onreadystatechange=text
+       function text() {
+         if(this.status==200 && this.readyState==4)
+         {
+          //  var e = document.getElementById('aa')
+          //  e.innerHTML=JSON.stringify(this.responseText)
+            var res_data=JSON.parse(this.responseText)
+            console.log(typeof res_data)
+           console.log(res_data);
+            var div4=document.getElementById('aa')
+            var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.AD.country_name + "  " +" ,   Country Code := "+res_data.AD.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.AE.country_name + "  " +" ,   Country Code := "+res_data.AE.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.AF.country_name + "  " +" ,   Country Code := "+res_data.AF.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.AI.country_name + "  " +" ,   Country Code := "+res_data.AI.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.AU.country_name + "  " +" ,   Country Code := "+res_data.AU.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.BD.country_name + "  " +" ,   Country Code := "+res_data.BD.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.BR.country_name + "  " +" ,   Country Code := "+res_data.BR.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.BT.country_name + "  " +" ,   Country Code := "+res_data.BT.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.DZ.country_name + "  " +" ,   Country Code := "+res_data.DZ.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.DK.country_name + "  " +" ,   Country Code := "+res_data.DK.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.ES.country_name + "  " +" ,   Country Code := "+res_data.ES.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.FR.country_name + "  " +" ,   Country Code := "+res_data.FR.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.GB.country_name + "  " +" ,   Country Code := "+res_data.GB.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.HK.country_name + "  " +" ,   Country Code := "+res_data.HK.dialling_code
+           div4.appendChild(li)
+           var li = document.createElement('li')
+            li.textContent = "Country Name := "+res_data.IN.country_name + "  " +" ,   Country Code := "+res_data.IN.dialling_code
+           div4.appendChild(li)
+         }
+       }
+       xhr.send()
+      </script>
+</html>
