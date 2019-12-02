@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="numverify">
+	<head>
+               
+	   <title>Documentation | numverify API</title>
+       <script src='js/shared/run_prettify.js'></script>
+   </head> 
+	<body style="background-color: lightsalmon;"> 
+        <!-- Documentation Strip -->	
+            <center class="documentation_heading info"><h1><u>API Documentation</u></h1></center> 
+              <section class="section_box first">
+                <div class="section_content">
+                
+                <h2 class="doc_heading mt-5"><u>numverify API</u></h2>
+
+                <p>NumVerify offers a full-featured yet simple RESTful JSON API for national and international phone number validation and information lookup for a total of 232 countries around the world.</p>
+                <p>Requested numbers are processed in real-time, cross-checked with the latest international numbering plan databases and returned in handy JSON format enriched with useful carrier, geographical location and line type data. </p>
+                <p>Integrating the numverify API into your application will enable you to verify the validity of phone numbers at the point of entry, protecting you from fraud and increasing good leads.</p>
+                
+                </div>
+              </section>
+              <br>
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h2 class="doc_heading" id="api_specs"><u>Specs & Overview</u></h2>
+                
+                <h3 class="doc_subheading bolder in_documentation" id="access_keys">API Access Key & Authentication</h3>
+                
+                <p>After signing up, every user is assigned a personal API Access Key - a unique "password" used to make requests to the API.</p>
+                
+                <p>To authenticate with the numverify API, simply attach your <span class="code_snippet">access_key</span> to the base endpoint URL:</p>
+
+                <pre class="prettyprint single_line">
+http://apilayer.net/api/validate?<span class="orange">access_key=YOUR_ACCESS_KEY</span>&nbsp;&nbsp;
+                </pre><br>
+                
+                
+                </div>
+              </section>
+              <br>
+              
+              <section class="section_box">
+                <div class="section_content">
+
+                <h3 class="doc_subheading bolder in_documentation" id="make_api_request">Make an API Request</h3>
+
+                <p>Since all existing validation data is returned by the same main API endpoint, making a phone number verification request to the numverify API is simple.</p>
+                                
+                <p class="pb5 pt5"><strong>Most basic API request:</strong></p>
+                                
+                                
+                <p>Hey, call the API yourself simply by clicking on the request URL below: (You should also have a look at the Browser URL)</p>
+                                
+                <p>As you can see, in addition to the <span class="code_snippet">access_key</span> parameter, there is only one required parameter (<span class="code_snippet">number</span>) to start validating phone numbers.</p>
+                
+                <p class="pb5 pt5"><strong>Optional parameters:</strong></p>
+                                
+                <pre class="prettyprint pt20 nocolor">
+country_code     specify a country code if you intend to 
+                 use a national phone number for your request
+               
+format           set to "1" in order to request prettified
+                 JSON result set (use only for debugging!)
+               
+callback         append your preferred JSONP callback function
+                 name. (See "JSONP Callbacks" section)
+                </pre>
+                                                
+                </div>
+              </section>
+              <br>
+              
+              <section class="section_box">
+                <div class="section_content">
+
+                <h3 class="doc_subheading bolder in_documentation mt25" id="api_response">API Response</h3>
+                <p>All numverify validation data is returned in universal and lightweight JSON format. Find below a standard API result set: </p> 
+
+                <pre class="prettyprint">
+{
+  "valid": <span class="orange">true</span>,
+  "number": "14158586273",
+  "local_format": "4158586273",
+  "international_format": "+14158586273",
+  "country_prefix": "+1",
+  "country_code": "US",
+  "country_name": "United States of America",
+  "location": "Novato",
+  "carrier": "AT&T Mobility LLC",
+  "line_type": "mobile"
+}      
+                </pre><br>
+                                
+                <p class="pb5 pt5"><strong>API response objects:</strong></p>
+                
+                <p>Each API response consists of 9 individual JSON response objects:</p>
+                
+                <br>
+                
+                <table class="average_table documentation mt-5">
+                <thead>
+                    <tr class="blue_heading">
+                       <th>Object</th>
+                       <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td><span class="code_snippet">"valid"</span></td>
+                       <td>Returns <span class="code_snippet">true</span> if the specified phone number is valid.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"number"</span></td>
+                       <td>Returns the phone number you specified in a clean format. (stripped of any special characters)</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"local_format"</span></td>
+                       <td>Returns the local (national) format of the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"international_format"</span></td>
+                       <td>Returns the international format of the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"country_prefix"</span></td>
+                       <td>Returns the international country dial prefix for the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"country_code"</span></td>
+                       <td>Returns the 2-letter country code assigned to the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"country_name"</span></td>
+                       <td>Returns the full country name assigned to the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"location"</span></td>
+                       <td>If available, returns the location (city, state, or county) assigned to the specified phone number.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">"carrier"</span></td>
+                       <td>Returns the name of the carrier which the specified phone number is registered with.</td>
+                    </tr>
+                   
+                </tbody>
+                </table>
+                
+                <br>
+
+                </div>
+              </section>
+              <br>
+                            
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="https">256-bit HTTPS Encryption<div class="supported_plans_box"><span class="supported_plan basic inline">Basic</span>&nbsp;<span class="supported_plan pro inline">Pro</span>&nbsp;<span class="supported_plan enterprise inline">Enterprise</span></div></h3>
+                
+                <p>Paid Customers may establish a secure connection (industry-standard SSL) to the numverify API and all data provided by and accessible through it.</p> 
+                
+                <p>To connect securely, simply attach an <span class="code_snippet">s</span> to the HTTP Protocol. (resulting in <span class="code_snippet">https://</span>)</p>
+                
+               
+                </div>
+              </section>
+              <br>
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="error_codes">API Error Codes</h3>
+                
+                <p>If your query fails, the numverify API will return a 3-digit error-code, an internal error type and a plain text "info" object containing suggestions for the user.</p>
+                
+                <p>Find below an example error - triggered when no phone number was specified:</p>
+                
+                <pre class="prettyprint pt20">
+{
+  "success": <span class="orange">false</span>,
+  "error": {
+    "code": 210,
+    "type": "no_phone_number_provided",
+    "info": "Please specify a phone number. [Example: 14158586273]" &nbsp;&nbsp;&nbsp;
+  }
+}
+                </pre><br><br>
+                
+                <h3 class="doc_subheading smaller bolder">Common API errors:</h3><br>
+                
+                <table class="average_table documentation mt-5">
+                <thead>
+                    <tr class="blue_heading">
+                       <th>Type</th>
+                       <th>Message</th>
+                       <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td><span class="code_snippet">404</span></td>
+                       <td><span class="code_snippet text_on_mobile">"404_not_found"</span></td>
+                       <td>User requested a resource which does not exist.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">101</span></td>
+                       <td><span class="code_snippet text_on_mobile">"missing_access_key"</span></td>
+                       <td>User did not supply an Access Key.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">101</span></td>
+                       <td><span class="code_snippet text_on_mobile">"invalid_access_key"</span></td>
+                       <td>User entered an invalid Access Key.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">103</span></td>
+                       <td><span class="code_snippet text_on_mobile">"invalid_api_function"</span></td>
+                       <td>User requested a non-existent API function.</td>
+                    </tr>
+                    <tr>
+                       <td><span class="code_snippet">210</span></td>
+                       <td><span class="code_snippet text_on_mobile">"no_phone_number_provided"</span></td>
+                       <td>User did not provide a phone number.</td>
+                    </tr>
+                    <!-- hidden rows -->
+                    <tr class="hidden">
+                       <td><span class="code_snippet">211</span></td>
+                       <td><span class="code_snippet text_on_mobile">"non_numeric_phone_number_provided"</span></td>
+                       <td>User did not provide a numeric phone number.</td>
+                    </tr>
+                    <tr class="hidden">
+                       <td><span class="code_snippet">310</span></td>
+                       <td><span class="code_snippet text_on_mobile">"invalid_country_code"</span></td>
+                       <td>User provided an invalid 2-letter country code.</td>
+                    </tr>
+                    <tr class="hidden">
+                       <td><span class="code_snippet">104</span></td>
+                       <td><span class="code_snippet text_on_mobile">"usage_limit_reached"</span></td>
+                       <td>User has reached or exceeded his Subscription Plan's monthly API Request Allowance.</td>
+                    </tr>
+                    <tr class="hidden">
+                       <td><span class="code_snippet">105</span></td>
+                       <td><span class="code_snippet text_on_mobile">"https_access_restricted"</span></td>
+                       <td>The user's current Subscription Plan does not support HTTPS Encryption.</td>
+                    </tr>
+                    <tr class="hidden">
+                       <td><span class="code_snippet">102</span></td>
+                       <td><span class="code_snippet text_on_mobile">"inactive_user"</span></td>
+                       <td>The user's account is not active. User will be prompted to get in touch with Customer Support.</td>
+                    </tr>
+                    <!-- hidden rows -->
+                </tbody>
+                </table>      
+                
+                <br>
+                
+                <div class="expand_table_button">show all errors</div>
+                
+                <br>
+                
+                </div>
+            
+             
+              <section class="section_box">
+                <div class="section_content">
+                <h2 class="doc_heading" id="api_validation_tools">API Features</h2>
+                
+                <h3 class="doc_subheading bolder in_documentation mt25" id="number_validation">Number Validation</h3>
+                
+                <p>Making a phone number validation request to the numverify API is simple. Simply append the <span class="code_snippet">number</span> parameter followed by the phone number you would like to validate to the API's <span class="code_snippet">validate</span> endpoint.</p>
+                            
+                <p class="pb5 pt5"><strong>Number input formats and correction mechanisms:</strong></p>
+                
+                <p>While it is most efficient to provide phone numbers in a strictly numeric format (e.g. <span class="code_snippet">441179287870</span>), the numverify API is also capable of processing numbers containing special characters (e.g. <span class="code_snippet">+44 (0) 117 928 7870</span>).</p>
+                
+                </div>
+              </section>
+              <br>
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="country_location">Country & Location Data</h3>
+                
+                <p>Every valid phone number request comes with three geographical identifiers, a 2-digit <span class="code_snippet">country_code</span>, the corresponding full <span class="code_snippet">country_name</span>, and an individual <span class="code_snippet">location</span> object containing the city, state or county where the requested phone number is registered.</p>
+                
+                <pre class="prettyprint pt20">
+[...]
+"country_code": "US",
+"country_name": "United States of America",
+"location": "Novato",     
+[...]           
+                </pre><br>
+                
+                <p><strong>Please note:</strong> While the two JSON objects indicating the country will be returned in nearly 100% of the cases, the <span class="code_snippet">location</span> object may not be available for certain numbers.</p>
+                
+                </div>
+              </section>
+              <br>   
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="national_numbers">National (Local) Numbers</h3>
+                
+                <p>If you intend to specify a phone number in its national (local) format, you will be required to provide additional country information, simply by appending your preferred 2-digit country code to the API's <span class="code_snippet">country_code</span> parameter and including it in your API request URL.</p>
+                             
+                <p><strong>Important:</strong> When working with national phone numbers, specifying a country code is obligatory.</p>
+                
+                <p><strong>Important:</strong> Please <strong>do not</strong> specify an additional <span class="code_snippet">country_code</span> parameter when working with international numbers (e.g. <span class="code_snippet">14158586273</span>).</p>
+                
+                </div>
+              </section>
+              <br>   
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="carrier_detection">Carrier Detection</h3>
+                
+                <p>While phone numbers help businesses identify and legitimize customers, some numbers are very easy to retrieve from certain carriers. For exmaple, anyone can quickly register multiple phone numbers from a free online provider, making it easy to create fake profiles.</p>
+                
+                <p>To address this risk, the numverify API will return a separate <span class="code_snippet">carrier</span> object containing the name of the carrier the requested phone number is registered with. This way businesses can require additional identity authentication for carriers associated with higher fraud instances.</p>
+                
+                <pre class="prettyprint pt20">
+[...]
+"carrier": "AT&T Mobility LLC",      
+[...]
+                </pre><br>
+                
+                <p><strong>Please note:</strong> Carrier information may not be available for certain phone numbers.</p>
+                
+                </div>
+              </section>
+              <br> 
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="line_type_detection">Line Type Detection</h3>
+                
+                <p>Certain number types don’t accept all communications, e.g. many VoIP and landline numbers do not accept SMS messages. This is why the numverify API will detect a number's line type and return a <span class="code_snippet">line_type</span> JSON object containing the necessary information for you to identify which kind of communications a number can accept.</p>
+                
+                <pre class="prettyprint pt20">
+[...]
+"line_type": "mobile"         
+                </pre><br>
+                <p class="pb5 pt5"><strong>Line types:</strong></p>
+                
+                <p>Finde below a list of all line types supported by the API.</p>
+                
+                <br>
+                
+                <table class="average_table documentation mt-5">
+                <thead>
+                    <tr class="blue_heading">
+                       <th>Line Type</th>
+                       <th><span class="code_snippet" style="background: none; color: black !important; font-weight:bold !important;">line_type</span> Object</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td>Mobile Phone</td>
+                       <td><span class="code_snippet">mobile</span></td>
+                    </tr>
+                    <tr>
+                       <td>Landline</td>
+                       <td><span class="code_snippet">landline</span></td>
+                    </tr>
+                    <tr>
+                       <td>Special Services (e.g. Police)</td>
+                       <td><span class="code_snippet">special_services</span></td>
+                    </tr>
+                    <tr>
+                       <td>Toll-Free Numbers (e.g. hotels)</td>
+                       <td><span class="code_snippet">toll_free</span></td>
+                    </tr>
+                    <tr>
+                       <td>Premium Rate Numbers (e.g. paid hotlines)</td>
+                       <td><span class="code_snippet">premium_rate</span></td>
+                    </tr>
+			<tr>
+			   <td>Satellite</td>
+			   <td><span class="code_snippet">satellite</span></td>
+			</tr>
+			<tr>
+			   <td>Paging</td>
+			   <td><span class="code_snippet">paging</span></td>
+			</tr>
+                </tbody>
+                </table>
+                
+                <br>
+                
+                </div>
+              </section>
+              <br> 
+              
+                                       
+              
+              <section class="section_box">
+                <div class="section_content">
+                <h3 class="doc_subheading bolder in_documentation" id="countries_endpoint">Countries Endpoint</h3>
+                
+                <p>The numverify API supports phone number validation for a total of <span class="bolder">232 countries (territories)</span> around the world. Using the API's <span class="code_snippet">countries</span> endpoint, you may access a comprehensive list of supported areas, including country names and dialling codes.</p>
+                
+                <pre class="prettyprint pt20">
+{
+"AF": {
+"country_name": "Afghanistan",
+"dialling_code": "+93"
+},
+"AL": {
+"country_name": "Albania",
+"dialling_code": "+355"
+},
+"DZ": {
+"country_name": "Algeria",
+"dialling_code": "+213"
+},
+"AS": {
+"country_name": "American Samoa",
+"dialling_code": "+1"
+},
+[...]   
+                </pre><br>
+                
+                <p>In order to access this JSON file, simply append your personal API access key to the <span class="code_snippet">countries</span> endpoint.</p>
+                                
+                                
+                <pre class="prettyprint single_line tip desktop_tip" data-tip="Click on the URL to view a JSON file containing all supported areas.">
+<a target="_blank" href="http://apilayer.net/api/countries?access_key=c36b33c8611e94befad1c59bbcfcc5d9&number=14158586273&format=1" class="no_deco">http://apilayer.net/api/<span class="orange">countries</span>?access_key=YOUR_ACCESS_KEY</a>&nbsp;&nbsp;
+                </pre>
+                
+                                
+                </div>
+    </section>
+</body>
+ </html>
